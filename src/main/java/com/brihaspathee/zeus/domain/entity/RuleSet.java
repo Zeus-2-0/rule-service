@@ -72,12 +72,6 @@ public class RuleSet {
     private boolean active;
 
     /**
-     * Identifies the implementation class of the rule set
-     */
-    @Column(name = "rule_set_impl_name", columnDefinition = "varchar", nullable = false, length = 100)
-    private String ruleSetImplName;
-
-    /**
      * The rules associated with the rule set
      */
     @OneToMany(mappedBy = "ruleSet", fetch = FetchType.EAGER)
@@ -110,7 +104,6 @@ public class RuleSet {
                 ", ruleSetName='" + ruleSetName + '\'' +
                 ", ruleSetDesc='" + ruleSetDesc + '\'' +
                 ", active=" + active +
-                ", ruleSetImplName='" + ruleSetImplName + '\'' +
                 ", rules=" + rules +
                 ", createdDate=" + createdDate +
                 ", updatedDate=" + updatedDate +

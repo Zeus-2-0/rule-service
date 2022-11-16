@@ -78,12 +78,6 @@ public class Rule {
     private boolean memberLevel;
 
     /**
-     * The implementation class of the rule
-     */
-    @Column(name = "rule_impl_name", length = 100, columnDefinition = "varchar", nullable = false)
-    private String ruleImplName;
-
-    /**
      * The transaction type associated with the rules
      */
     @OneToMany(mappedBy = "rule", fetch = FetchType.EAGER)
@@ -117,7 +111,6 @@ public class Rule {
                 ", ruleDesc='" + ruleDesc + '\'' +
                 ", active=" + active +
                 ", memberLevel=" + memberLevel +
-                ", ruleImplName='" + ruleImplName + '\'' +
                 ", createdDate=" + createdDate +
                 ", updatedDate=" + updatedDate +
                 '}';
