@@ -44,7 +44,6 @@ public class RuleMapperImpl implements RuleMapper {
                 .ruleId(rule.getRuleId())
                 .ruleName(rule.getRuleName())
                 .ruleDesc(rule.getRuleDesc())
-                .ruleImplName(rule.getRuleImplName())
                 .active(rule.isActive())
                 .ruleTransactions(ruleTransactionMapper
                         .ruleTransactionsToRuleTransactionDtos(
@@ -67,7 +66,6 @@ public class RuleMapperImpl implements RuleMapper {
                 .ruleId(ruleDto.getRuleId())
                 .ruleName(ruleDto.getRuleName())
                 .ruleDesc(ruleDto.getRuleDesc())
-                .ruleImplName(ruleDto.getRuleImplName())
                 .active(ruleDto.isActive())
                 .ruleTransactions(ruleTransactionMapper
                         .ruleTransactionDtosToRuleTransactions(

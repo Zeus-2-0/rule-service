@@ -45,7 +45,6 @@ public class RuleSetMapperImpl implements RuleSetMapper {
                 .ruleSetName(ruleSet.getRuleSetName())
                 .ruleSetDesc(ruleSet.getRuleSetDesc())
                 .active(ruleSet.isActive())
-                .ruleSetImplName(ruleSet.getRuleSetImplName())
                 .rules(ruleMapper.rulesToRuleDtos(ruleSet.getRules()))
                 .build();
         return ruleSetDto;
@@ -65,7 +64,6 @@ public class RuleSetMapperImpl implements RuleSetMapper {
                 .ruleSetId(ruleSetDto.getRuleSetId())
                 .ruleSetName(ruleSetDto.getRuleSetName())
                 .ruleSetDesc(ruleSetDto.getRuleSetDesc())
-                .ruleSetImplName(ruleSetDto.getRuleSetImplName())
                 .active(ruleSetDto.isActive())
                 .rules(ruleMapper.ruleDtosToRules(ruleSetDto.getRules()))
                 .build();
