@@ -46,12 +46,10 @@ public class RuleServiceImpl implements RuleService {
     public RuleCategoryDto getRules(String ruleCategoryName,
                                     String ruleType) {
         RuleCategory ruleCategory =
-                repository.findRuleCategoryByRuleCategoryNameAndRuleType(
-                        ruleCategoryName,
-                        ruleType).orElseThrow(() -> {
-                            throw new RuleCategoryNotFoundException("Rule with category: " + ruleCategoryName + " and rule" +
-                                    " type " + ruleType + " not found");
-                });
+                repository.findRuleCategoryByRuleCategoryName(
+                        ruleCategoryName).orElseThrow(() ->
+                        new RuleCategoryNotFoundException("Rule with category: " + ruleCategoryName + " not found"));
+        ruleCategory.getRuleTypes().removeIf(ruleType1 -> !ruleType1.getRuleTypeName().equals(ruleType));
         return categoryMapper.ruleCategoryToRuleCategoryDto(ruleCategory);
     }
 }

@@ -41,11 +41,11 @@ public class RuleSet {
     private UUID ruleSetSK;
 
     /**
-     * The category that the rule belongs
+     * The rule type that the ruleset belongs
      */
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "rule_category_sk")
-    private RuleCategory ruleCategory;
+    @JoinColumn(name = "rule_type_sk")
+    private RuleType ruleType;
 
     /**
      * Unique id that identifies the rule set
@@ -91,22 +91,4 @@ public class RuleSet {
     @Column(name = "updated_date")
     private LocalDateTime updatedDate;
 
-    /**
-     * toString method
-     * @return
-     */
-    @Override
-    public String toString() {
-        return "RuleSet{" +
-                "ruleSetSK=" + ruleSetSK +
-                ", ruleCategory=" + ruleCategory +
-                ", ruleSetId='" + ruleSetId + '\'' +
-                ", ruleSetName='" + ruleSetName + '\'' +
-                ", ruleSetDesc='" + ruleSetDesc + '\'' +
-                ", active=" + active +
-                ", rules=" + rules +
-                ", createdDate=" + createdDate +
-                ", updatedDate=" + updatedDate +
-                '}';
-    }
 }

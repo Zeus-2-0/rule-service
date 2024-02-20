@@ -26,10 +26,4 @@ public interface RuleCategoryRepository extends JpaRepository<RuleCategory, UUID
      */
     Optional<RuleCategory> findRuleCategoryByRuleCategoryName(String categoryName);
 
-    /**
-     * Find the rule category by category name and type
-     * @param categoryName
-     * @return
-     */
-    Optional<RuleCategory> findRuleCategoryByRuleCategoryNameAndRuleType(String categoryName, String ruleType);
 }
