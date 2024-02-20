@@ -4,6 +4,7 @@ import com.brihaspathee.zeus.domain.entity.RuleCategory;
 import com.brihaspathee.zeus.dto.rules.RuleCategoryDto;
 import com.brihaspathee.zeus.mapper.interfaces.RuleCategoryMapper;
 import com.brihaspathee.zeus.mapper.interfaces.RuleSetMapper;
+import com.brihaspathee.zeus.mapper.interfaces.RuleTypeMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -28,7 +29,7 @@ public class RuleCategoryMapperImpl implements RuleCategoryMapper {
     /**
      * Rule set mapper instance to map all the rule sets
      */
-    private final RuleSetMapper ruleSetMapper;
+    private final RuleTypeMapper ruleTypeMapper;
 
     /**
      * Convert rule category entity to rule category dto
@@ -44,8 +45,7 @@ public class RuleCategoryMapperImpl implements RuleCategoryMapper {
                 .ruleCategoryId(ruleCategory.getRuleCategoryId())
                 .ruleCategoryName(ruleCategory.getRuleCategoryName())
                 .ruleCategoryDesc(ruleCategory.getRuleCategoryDesc())
-                .ruleType(ruleCategory.getRuleType())
-                .ruleSets(ruleSetMapper.ruleSetsToRuleSetDtos(ruleCategory.getRuleSets()))
+                .ruleTypes(ruleTypeMapper.ruleTypesToRuleTypeDtos(ruleCategory.getRuleTypes()))
                 .build();
         return ruleCategoryDto;
     }
@@ -64,8 +64,7 @@ public class RuleCategoryMapperImpl implements RuleCategoryMapper {
                 .ruleCategoryId(ruleCategoryDto.getRuleCategoryId())
                 .ruleCategoryName(ruleCategoryDto.getRuleCategoryName())
                 .ruleCategoryDesc(ruleCategoryDto.getRuleCategoryDesc())
-                .ruleType(ruleCategoryDto.getRuleType())
-                .ruleSets(ruleSetMapper.ruleSetDtosToRuleSets(ruleCategoryDto.getRuleSets()))
+                .ruleTypes(ruleTypeMapper.ruleTypeDtosToRuleTypes(ruleCategoryDto.getRuleTypes()))
                 .build();
         return ruleCategory;
     }

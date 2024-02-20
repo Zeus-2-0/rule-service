@@ -1,3 +1,8 @@
+DROP TABLE IF EXISTS `rulesdb`.`rule_category`;
+DROP TABLE IF EXISTS `rulesdb`.`rule_type`;
+DROP TABLE IF EXISTS `rulesdb`.`rule_set`;
+DROP TABLE IF EXISTS `rulesdb`.`rule`;
+DROP TABLE IF EXISTS `rulesdb`.`rule_transaction`;
 CREATE TABLE IF NOT EXISTS `rulesdb`.`rule_category` (
     `rule_category_sk` VARCHAR(36) NOT NULL COMMENT 'The primary key of the table',
     `rule_category_id` VARCHAR(50) NOT NULL COMMENT 'The unique Id of the category',
@@ -9,9 +14,26 @@ CREATE TABLE IF NOT EXISTS `rulesdb`.`rule_category` (
     PRIMARY KEY (`rule_category_sk`))
     ENGINE = InnoDB
     COMMENT = 'This table contains the list of all the rule categories like “ACCOUNT”, “TRANSACTION”, “FILE” etc';
+CREATE TABLE IF NOT EXISTS `rulesdb`.`rule_type` (
+    `rule_type_sk` VARCHAR(36) NOT NULL COMMENT 'The primary key of the table',
+    `rule_type_id` VARCHAR(50) NOT NULL COMMENT 'The unique Id of the rule type',
+    `rule_type_name` VARCHAR(100) NOT NULL COMMENT 'The name of the rule type',
+    `rule_type_desc` VARCHAR(200) NOT NULL COMMENT 'A short description of the rule type',
+    `rule_category_sk` VARCHAR(36) NOT NULL COMMENT 'The rule category that the rule type belongs',
+    `created_date` DATETIME NULL COMMENT 'Date when the record was created',
+    `updated_date` DATETIME NULL COMMENT 'Date when the record was updated',
+    PRIMARY KEY (`rule_type_sk`),
+    INDEX `rule_category_fk_idx` (`rule_category_sk` ASC) VISIBLE,
+    CONSTRAINT `rule_category_fk`
+    FOREIGN KEY (`rule_category_sk`)
+    REFERENCES `rulesdb`.`rule_category` (`rule_category_sk`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+    ENGINE = InnoDB
+    COMMENT = 'This table contains the list of all the rule types like “Pre validation rule” and “Business Rules” within the “TRANSACTION” category';
 CREATE TABLE IF NOT EXISTS `rulesdb`.`rule_set` (
     `rule_set_sk` VARCHAR(36) NOT NULL COMMENT 'The primary key of the rule set table',
-    `rule_category_sk` VARCHAR(36) NOT NULL COMMENT 'The rule category that the rule set belongs',
+    `rule_type_sk` VARCHAR(36) NOT NULL COMMENT 'The rule type that the rule set belongs',
     `rule_set_id` VARCHAR(50) NOT NULL COMMENT 'Unique id associated with the rule set',
     `rule_set_name` VARCHAR(100) NOT NULL COMMENT 'The name of the rule set',
     `rule_set_desc` VARCHAR(200) NOT NULL COMMENT 'A short description of the ruleset',
@@ -19,10 +41,10 @@ CREATE TABLE IF NOT EXISTS `rulesdb`.`rule_set` (
     `created_date` DATETIME NULL COMMENT 'Date when the record was created',
     `updated_date` DATETIME NULL COMMENT 'Date when the record was updated',
     PRIMARY KEY (`rule_set_sk`),
-    INDEX `rule_category_fk_idx` (`rule_category_sk` ASC) VISIBLE,
-    CONSTRAINT `rule_category_fk`
-    FOREIGN KEY (`rule_category_sk`)
-    REFERENCES `rulesdb`.`rule_category` (`rule_category_sk`)
+    INDEX `rule_type_fk_idx` (`rule_type_sk` ASC) VISIBLE,
+    CONSTRAINT `rule_type_fk`
+    FOREIGN KEY (`rule_type_sk`)
+    REFERENCES `rulesdb`.`rule_type` (`rule_type_sk`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
     ENGINE = InnoDB

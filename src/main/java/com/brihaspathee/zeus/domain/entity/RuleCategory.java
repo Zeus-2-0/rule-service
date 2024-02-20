@@ -58,17 +58,23 @@ public class RuleCategory {
     @Column(name = "rule_category_desc", length = 200, columnDefinition = "varchar", nullable = false)
     private String ruleCategoryDesc;
 
-    /**
-     * Identifies the type of rules within the category. Like “Pre validation rule” and “Business Rules” within the “TRANSACTION” category
-     */
-    @Column(name = "rule_type", length = 50, columnDefinition = "varchar", nullable = false)
-    private String ruleType;
+//    /**
+//     * Identifies the type of rules within the category. Like “Pre validation rule” and “Business Rules” within the “TRANSACTION” category
+//     */
+//    @Column(name = "rule_type", length = 50, columnDefinition = "varchar", nullable = false)
+//    private String ruleType;
+
+//    /**
+//     * The rule sets associated with the rule category
+//     */
+//    @OneToMany(mappedBy = "ruleCategory", fetch = FetchType.EAGER)
+//    private List<RuleSet> ruleSets;
 
     /**
-     * The rule sets associated with the rule category
+     * The rule types associated with the rule category
      */
     @OneToMany(mappedBy = "ruleCategory", fetch = FetchType.EAGER)
-    private List<RuleSet> ruleSets;
+    private List<RuleType> ruleTypes;
 
     /**
      * Date when the record was created
