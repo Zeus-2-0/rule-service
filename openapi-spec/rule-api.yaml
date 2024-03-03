@@ -13,7 +13,31 @@ servers:
 - url: http://localhost:8098
   description: Development Server
 paths:
-  /api/v1/zeus/rules:
+  /api/v1/zeus/rules/{ruleCategoryName}/{ruleType}:
+    get:
+      tags:
+      - rules
+      description: Get Rules by category and type
+      operationId: Get Rules by category and type
+      parameters:
+      - name: ruleCategoryName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ruleType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successfully retrieved the Rules
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RuleCategoryDto'
+  /api/v1/zeus/rules/welcome:
     get:
       tags:
       - welcome
@@ -28,6 +52,125 @@ paths:
                 $ref: '#/components/schemas/WelcomeDto'
 components:
   schemas:
+    RuleCategoryDto:
+      required:
+      - ruleCategoryId
+      type: object
+      properties:
+        ruleCategoryId:
+          type: string
+          description: This is unique id for the rule category
+          readOnly: true
+          example: GLPSKJXBMPXDVUI
+        ruleCategoryName:
+          type: string
+          description: This is name for the rule category
+          readOnly: true
+          example: ACCOUNT
+        ruleCategoryDesc:
+          type: string
+          description: A short description for the rule category
+          readOnly: true
+          example: Account Rules
+        ruleTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleTypeDto'
+    RuleDto:
+      required:
+      - ruleId
+      type: object
+      properties:
+        ruleId:
+          type: string
+          description: This is unique id for the rule
+          readOnly: true
+          example: GLPSKJXBMPXDVUI
+        ruleTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleTransactionDto'
+        ruleName:
+          type: string
+          description: This is name for the rule
+          readOnly: true
+          example: GENDER
+        ruleDesc:
+          type: string
+          description: A short description for the rule
+          readOnly: true
+          example: Validates the gender
+        active:
+          type: boolean
+          description: Identifies if the rule is active
+          readOnly: true
+          example: true
+        memberLevel:
+          type: boolean
+          description: Identifies if the rule is at the member level
+          readOnly: true
+          example: true
+    RuleSetDto:
+      required:
+      - ruleSetId
+      type: object
+      properties:
+        ruleSetId:
+          type: string
+          description: This is unique id for the rule set
+          readOnly: true
+          example: GLPSKJXBMPXDVUI
+        rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleDto'
+        ruleSetName:
+          type: string
+          description: This is name for the rule set
+          readOnly: true
+          example: Span Rule Set
+        ruleSetDesc:
+          type: string
+          description: A short description for the rule set
+          readOnly: true
+          example: Rule set for all span rules
+        active:
+          type: boolean
+          description: Identifies if the rule set is active
+          readOnly: true
+          example: true
+    RuleTransactionDto:
+      type: object
+      properties:
+        transactionTypeCode:
+          type: string
+          description: The type of transaction that the rule should be executed against
+          readOnly: true
+          example: ADD
+    RuleTypeDto:
+      required:
+      - ruleTypeId
+      type: object
+      properties:
+        ruleTypeId:
+          type: string
+          description: This is unique id for the rule type
+          readOnly: true
+          example: GLPSKJXBMPXDVUI
+        ruleTypeName:
+          type: string
+          description: This is name for the rule type
+          readOnly: true
+          example: BUSINESS_RULE
+        ruleTypeDesc:
+          type: string
+          description: A short description for the rule type
+          readOnly: true
+          example: Business Rules
+        ruleSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/RuleSetDto'
     WelcomeDto:
       type: object
       properties:

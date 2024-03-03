@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS `rulesdb`.`rule_category` (
     `rule_category_id` VARCHAR(50) NOT NULL COMMENT 'The unique Id of the category',
     `rule_category_name` VARCHAR(100) NOT NULL COMMENT 'The name of the category',
     `rule_category_desc` VARCHAR(200) NOT NULL COMMENT 'A short description of the category',
-    `rule_type` VARCHAR(50) NOT NULL COMMENT 'Identifies the type of rules within the category. Like “Pre validation rule” and “Business Rules” within the “TRANSACTION” category',
     `created_date` DATETIME NULL COMMENT 'Date when the record was created',
     `updated_date` DATETIME NULL COMMENT 'Date when the record was updated',
     PRIMARY KEY (`rule_category_sk`))
