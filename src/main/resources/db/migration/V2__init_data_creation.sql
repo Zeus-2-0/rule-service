@@ -65,7 +65,7 @@ insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_t
 -- EFFECTIVE_DATE_PRESENCE mapping
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('d48b9f86-f852-4395-a4a2-96b850dd0f2f', 'd91f1ab9-35b8-4423-ab4f-acef3999f88d', 'ADD', sysdate(), sysdate());
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('6d092659-8f28-4106-b4ef-5d62d3d03f5b', 'd91f1ab9-35b8-4423-ab4f-acef3999f88d', 'CHANGE', sysdate(), sysdate());
-insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('e10d5ddd-098b-4cfe-b7ef-c3ce102747ef', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'REINSTATEMENT', sysdate(), sysdate());
+insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('9c9f71e8-8528-45e4-8e60-e6dd47b3abcd', 'd91f1ab9-35b8-4423-ab4f-acef3999f88d', 'REINSTATEMENT', sysdate(), sysdate());
 
 -- END_DATE_PRESENCE mapping
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('80a65d45-8360-467c-9a27-e0c208d0669a', '7227bf1d-a0f4-4d5f-b0e2-87341a732d78', 'CANCELORTERM', sysdate(), sysdate());
@@ -76,21 +76,21 @@ insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_t
 -- SUBSCRIBER RULE mapping
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('8fbea563-0215-4dc7-aaa7-c6df425c27bd', 'c9c45355-c101-45a1-892f-0386d3f42e5b', 'ADD', sysdate(), sysdate());
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('6aff8fee-44b7-4237-a762-bfa3434af707', 'c9c45355-c101-45a1-892f-0386d3f42e5b', 'CANCELORTERM', sysdate(), sysdate());
-insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('e10d5ddd-098b-4cfe-b7ef-c3ce102747ef', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'REINSTATEMENT', sysdate(), sysdate());
+insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('9763893d-eec0-4bea-90e8-392824bcb352', 'c9c45355-c101-45a1-892f-0386d3f42e5b', 'REINSTATEMENT', sysdate(), sysdate());
 
 -- EXCHANGE SUBSCRIBER ID RULE mapping
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('142f53b7-fc9f-47e8-8ba9-0bd345d38523', '4f77ab30-deb0-48f0-ac99-5d645df5c92a', 'ADD', sysdate(), sysdate());
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('4c22020c-82fc-4e1d-a1af-95a0da07547c', '4f77ab30-deb0-48f0-ac99-5d645df5c92a', 'CHANGE', sysdate(), sysdate());
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('668c4359-7836-4b6e-8e63-d5ead6e65346', '4f77ab30-deb0-48f0-ac99-5d645df5c92a', 'CANCELORTERM', sysdate(), sysdate());
-insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('e10d5ddd-098b-4cfe-b7ef-c3ce102747ef', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'REINSTATEMENT', sysdate(), sysdate());
+insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('fb16e19e-9390-48bd-9f8c-8638dc9f7d3d', '4f77ab30-deb0-48f0-ac99-5d645df5c92a', 'REINSTATEMENT', sysdate(), sysdate());
 
 -- EXCHANGE MEMBER ID RULE mapping
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('605c22ef-907d-4176-8fc0-43dee2b83971', 'ce758215-cd57-4c14-9ac6-976a52346d33', 'ADD', sysdate(), sysdate());
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('fd44a2c7-088a-49ef-bf4a-6f4de8cb99ea', 'ce758215-cd57-4c14-9ac6-976a52346d33', 'CHANGE', sysdate(), sysdate());
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('c21225ea-d22f-4a5f-9155-e1cffd94c0ac', 'ce758215-cd57-4c14-9ac6-976a52346d33', 'CANCELORTERM', sysdate(), sysdate());
-insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('e10d5ddd-098b-4cfe-b7ef-c3ce102747ef', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'REINSTATEMENT', sysdate(), sysdate());
+insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('720e9e4f-7a2a-47ac-9d1a-9f5ae643c4ab', 'ce758215-cd57-4c14-9ac6-976a52346d33', 'REINSTATEMENT', sysdate(), sysdate());
 
 -- PREMIUM TOTAL RULE mapping
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('af9be54d-b32b-4971-b75b-949a0f6c6725', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'ADD', sysdate(), sysdate());
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('911e64bb-f04d-4855-ab7b-6466880602b9', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'CHANGE', sysdate(), sysdate());
-insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('e10d5ddd-098b-4cfe-b7ef-c3ce102747ef', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'REINSTATEMENT', sysdate(), sysdate());
+insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('5cb21104-7f9c-4b63-886e-cf3989065f14', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'REINSTATEMENT', sysdate(), sysdate());
