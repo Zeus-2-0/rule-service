@@ -93,4 +93,4 @@ insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_t
 -- PREMIUM TOTAL RULE mapping
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('af9be54d-b32b-4971-b75b-949a0f6c6725', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'ADD', sysdate(), sysdate());
 insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('911e64bb-f04d-4855-ab7b-6466880602b9', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'CHANGE', sysdate(), sysdate());
-insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('5cb21104-7f9c-4b63-886e-cf3989065f14', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'REINSTATEMENT', sysdate(), sysdate());
+-- insert into rulesdb.rule_transaction(rule_transaction_sk, rule_sk, transaction_type_code, created_date, updated_date) VALUES ('5cb21104-7f9c-4b63-886e-cf3989065f14', '1dda1260-3e86-4c61-8b2c-5cd3cd3d2165', 'REINSTATEMENT', sysdate(), sysdate());
