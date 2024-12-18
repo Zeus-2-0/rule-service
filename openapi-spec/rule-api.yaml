@@ -36,7 +36,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RuleCategoryDto'
+                $ref: "#/components/schemas/RuleCategoryDto"
   /api/v1/zeus/rules/welcome:
     get:
       tags:
@@ -49,7 +49,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/WelcomeDto'
+                $ref: "#/components/schemas/WelcomeDto"
 components:
   schemas:
     RuleCategoryDto:
@@ -75,7 +75,7 @@ components:
         ruleTypes:
           type: array
           items:
-            $ref: '#/components/schemas/RuleTypeDto'
+            $ref: "#/components/schemas/RuleTypeDto"
     RuleDto:
       required:
       - ruleId
@@ -89,7 +89,7 @@ components:
         ruleTransactions:
           type: array
           items:
-            $ref: '#/components/schemas/RuleTransactionDto'
+            $ref: "#/components/schemas/RuleTransactionDto"
         ruleName:
           type: string
           description: This is name for the rule
@@ -123,7 +123,7 @@ components:
         rules:
           type: array
           items:
-            $ref: '#/components/schemas/RuleDto'
+            $ref: "#/components/schemas/RuleDto"
         ruleSetName:
           type: string
           description: This is name for the rule set
@@ -170,7 +170,7 @@ components:
         ruleSets:
           type: array
           items:
-            $ref: '#/components/schemas/RuleSetDto'
+            $ref: "#/components/schemas/RuleSetDto"
     WelcomeDto:
       type: object
       properties:
